@@ -15,7 +15,13 @@ def add_task():
     print("Task {new_task} added succesfully!")
     print(tasks)
 
-
+# Function for viewing tasks
+def view_tasks():
+    if not tasks: 
+        print("Your To-Do list is empty.")
+    else:
+        for index, task in enumerate(tasks, 1):
+            print(f"{index}. {task}")
 
 # Main Function
 def main():
@@ -25,11 +31,11 @@ def main():
         if choice == "1":
             add_task()
         elif choice == "2":
-            view_task()
-        elif choice == "3":
-            delete_task()    
-        elif choice == "4":
-            break()
+            view_tasks()
+        # elif choice == "3":
+        #     delete_task()    
+        # elif choice == "4":
+        #     break()
         else:
             print("Invalid choice. Please try again.")
 
